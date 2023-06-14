@@ -1,0 +1,29 @@
+name: Unexpected Format Result
+description: Report the unexpected result you have got.
+title: 'Unexpected Format Result from ...'
+labels: [bug, format]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+        This tool is still in beta, so there are bound to be some bugs. I'll appreciate it if you can report any bugs you find!
+
+  - type: textarea
+    id: text-to-format
+    attributes:
+      label: Text you selected to format
+      description: |
+        Please paste the text you selected to format
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-output
+    attributes:
+      label: Expected Output
+      description: |
+        This field is not required if the output is clearly not correctly formatted. But I'll appreciate it if you point it out anyway!
+    validations:
+      required: false
