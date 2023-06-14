@@ -1,4 +1,4 @@
-import { Processor } from '../orderedProcessor'
+import { Processor } from '../createOrderedProcessor'
 import { regex as r } from '../regex'
 
 // ex: A(Apple) => A (Apple)

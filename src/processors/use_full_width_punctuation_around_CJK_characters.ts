@@ -1,5 +1,5 @@
+import { Processor } from '../createOrderedProcessor'
 import { getAllFullWidthForms, halfToFullWidthMap, transformHalfToFullWidth } from '../fullAndHalfWidthSymbols'
-import { Processor } from '../orderedProcessor'
 import { regex as r } from '../regex'
 import { regexSource as rs } from '../regexSource'
 

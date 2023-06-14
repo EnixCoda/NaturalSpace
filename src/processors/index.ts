@@ -1,4 +1,4 @@
-import { MetaProcessorRecord, Processor, ProcessorRecord } from '../orderedProcessor'
+import { MetaProcessorRecord, Processor, ProcessorRecord } from '../createOrderedProcessor'
 import { add_space_after_units } from './add_space_after_units'
 import { ensure_space_after_some_half_width_punctuations } from './ensure_space_after_some_half_width_punctuations'
 import { ensure_space_around_some_half_width_punctuations } from './ensure_space_around_some_half_width_punctuations'

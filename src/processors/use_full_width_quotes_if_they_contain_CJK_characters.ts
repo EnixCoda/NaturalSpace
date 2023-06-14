@@ -1,4 +1,4 @@
-import { Processor } from '../orderedProcessor'
+import { Processor } from '../createOrderedProcessor'
 import { regex as r } from '../regex'
 import { regexSourceRanges as rsr } from '../regexSource'
 

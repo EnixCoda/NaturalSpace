@@ -1,7 +1,7 @@
 // This file is dev-time
 // It determines the order of processors based on their dependencies at dev-time
 // So that resources can be saved at run-time
-import { ProcessorRecord } from './orderedProcessor'
+import { ProcessorRecord } from './createOrderedProcessor'
 
 export function findProcessorOrder(processors: ProcessorRecord[]) {
   const dependencyMap = processors.reduce((acc, [name, , dependencies]) => {

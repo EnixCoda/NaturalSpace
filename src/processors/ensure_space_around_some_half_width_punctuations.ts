@@ -1,5 +1,5 @@
+import { Processor } from '../createOrderedProcessor'
 import { getAllHalfWidthForms } from '../fullAndHalfWidthSymbols'
-import { Processor } from '../orderedProcessor'
 import { regex as r } from '../regex'
 
 // ex: A&B => A & B
