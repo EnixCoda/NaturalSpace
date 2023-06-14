@@ -1,4 +1,3 @@
-import { Preferences } from './Preferences'
 import { processText } from './processText'
 import { splitByPattern } from './splitByPattern'
 

@@ -1,5 +1,3 @@
-import { Preferences } from './Preferences'
-
 const debug = false // `import("@raycast/api").environment.isDevelopment` does not work
 
 export type MetaProcessorRecord = [name: string, dependencies?: string[]]

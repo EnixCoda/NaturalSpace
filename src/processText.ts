@@ -1,6 +1,5 @@
 import { findProcessorOrder } from './findProcessorOrder'
 import { createOrderedProcessor } from './orderedProcessor'
-import { Preferences } from './Preferences'
 import { processors } from './processors/processors'
 
 const processorOrder =

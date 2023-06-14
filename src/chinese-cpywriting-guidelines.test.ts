@@ -1,4 +1,3 @@
-import { Preferences } from './Preferences'
 import { processText } from './processText'
 
 // Cases from https://github.com/sparanoid/chinese-copywriting-guidelines

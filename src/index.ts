@@ -1,6 +1,5 @@
 import { Clipboard, getPreferenceValues, getSelectedText, showHUD } from '@raycast/api'
 import { name as extractedText } from '../package.json'
-import { Preferences } from './Preferences'
 import { processInput } from './processInput'
 import { sleep } from './utils'
 
