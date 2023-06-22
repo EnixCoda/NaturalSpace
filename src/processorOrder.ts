@@ -16,4 +16,4 @@ export const processorOrder = [
   'no space around full-width punctuation',
   'ensure space after some half-width punctuations',
   'ensure space around some half-width punctuations',
-]
+];

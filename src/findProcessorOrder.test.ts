@@ -1,9 +1,9 @@
-import { findProcessorOrder } from './findProcessorOrder'
-import { processorOrder } from './processorOrder'
-import { processors } from './processors'
+import { findProcessorOrder } from './findProcessorOrder';
+import { processorOrder } from './processorOrder';
+import { processors } from './processors';
 
-const noop = () => ''
-const echo = (x: string) => (acc: string) => acc + x
+const noop = () => '';
+const echo = (x: string) => (acc: string) => acc + x;
 
 describe('Find processor order', () => {
   it('should find processor order', () => {
@@ -13,8 +13,8 @@ describe('Find processor order', () => {
         ['b', echo('b'), ['c']],
         ['c', echo('c')],
       ])
-    ).toEqual(['c', 'b', 'a'])
-  })
+    ).toEqual(['c', 'b', 'a']);
+  });
 
   it('should handle more complex cases', () => {
     expect(
@@ -24,8 +24,8 @@ describe('Find processor order', () => {
         ['b1', noop],
         ['b2', noop],
       ])
-    ).toEqual(['b1', 'b2', 'a1', 'a2'])
-  })
+    ).toEqual(['b1', 'b2', 'a1', 'a2']);
+  });
 
   it('should detect loop', () => {
     expect(() =>
@@ -34,8 +34,8 @@ describe('Find processor order', () => {
         ['b', noop, ['c']],
         ['c', noop, ['a']],
       ])
-    ).toThrowError()
-  })
+    ).toThrowError();
+  });
 
   it('should detect duplicate', () => {
     expect(() =>
@@ -45,8 +45,8 @@ describe('Find processor order', () => {
         ['c', noop],
         ['a', noop, ['b']],
       ])
-    ).toThrowError()
-  })
+    ).toThrowError();
+  });
 
   it('should detect missing dependency', () => {
     expect(() =>
@@ -56,10 +56,10 @@ describe('Find processor order', () => {
         ['c', noop],
         ['d', noop, ['e']],
       ])
-    ).toThrowError()
-  })
+    ).toThrowError();
+  });
 
   it('should output the order of processors', () => {
-    expect(findProcessorOrder(processors)).toEqual(processorOrder)
-  })
-})
+    expect(findProcessorOrder(processors)).toEqual(processorOrder);
+  });
+});

@@ -1,8 +1,8 @@
-import { createOrderedProcessor } from './createOrderedProcessor'
-import { processorOrder } from './processorOrder'
-import { processors } from './processors'
+import { createOrderedProcessor } from './createOrderedProcessor';
+import { processorOrder } from './processorOrder';
+import { processors } from './processors';
 
-const processor = createOrderedProcessor(processors, processorOrder)
+const processor = createOrderedProcessor(processors, processorOrder);
 
 // This function is expected to address 90% of the text processing needs, do NOT expect it to be perfect
 // Expectations of the input:
@@ -14,5 +14,5 @@ const processor = createOrderedProcessor(processors, processorOrder)
 // - Punctuations do not appear at the beginning of a line, except for `(` and `"` which are used to start a quote
 // - No multiple punctuations appear in a row, except for `...` and `---`
 export function processText(input: string, preferences: Preferences = {}): string {
-  return processor(input, preferences)
+  return processor(input, preferences);
 }
