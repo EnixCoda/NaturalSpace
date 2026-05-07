@@ -158,7 +158,7 @@ describe('stress - punctuation cascades', () => {
   });
 
   it('quotation marks nesting with CJK', () => {
-    t('"他说\'你好\'"', '\u201c他说\'你好\'\u201d');
+    t('"他说\'你好\'"', "\u201c他说'你好'\u201d");
   });
 
   it('nested brackets of different types', () => {
@@ -222,11 +222,11 @@ describe('stress - code & identifier patterns', () => {
     t('去U.S.A.旅游', '去 U.S.A. 旅游');
   });
 
-  it('possessives adjacent to CJK: Apple\'s', () => {
+  it("possessives adjacent to CJK: Apple's", () => {
     t("Apple's产品很好", "Apple's 产品很好");
   });
 
-  it('contractions adjacent to CJK: don\'t', () => {
+  it("contractions adjacent to CJK: don't", () => {
     t("don't翻译这个", "don't 翻译这个");
   });
 });
@@ -398,17 +398,11 @@ describe('stress - complex real-world text', () => {
 
   it('mixed Japanese and English tech text', () => {
     // Period after Japanese (CJK) correctly becomes full-width 。
-    t(
-      'TypeScriptの型チェックはコンパイル時に行われます.',
-      'TypeScript の型チェックはコンパイル時に行われます。'
-    );
+    t('TypeScriptの型チェックはコンパイル時に行われます.', 'TypeScript の型チェックはコンパイル時に行われます。');
   });
 
   it('Korean with mixed English', () => {
-    t(
-      'React를사용하여Web개발을합니다',
-      'React 를사용하여 Web 개발을합니다'
-    );
+    t('React를사용하여Web개발을합니다', 'React 를사용하여 Web 개발을합니다');
   });
 
   it('gaming terminology', () => {
@@ -420,17 +414,11 @@ describe('stress - complex real-world text', () => {
   });
 
   it('social media post with hashtags', () => {
-    t(
-      '今天的天气真好#晴天#周末',
-      '今天的天气真好 #晴天 #周末'
-    );
+    t('今天的天气真好#晴天#周末', '今天的天气真好 #晴天 #周末');
   });
 
   it('mixed brackets in technical writing', () => {
-    t(
-      'Array<String>(即字符串数组)在Java中很常见',
-      'Array<String>（即字符串数组）在 Java 中很常见'
-    );
+    t('Array<String>(即字符串数组)在Java中很常见', 'Array<String>（即字符串数组）在 Java 中很常见');
   });
 });
 
@@ -438,59 +426,35 @@ describe('stress - complex real-world text', () => {
 
 describe('stress - URL edge cases', () => {
   it('URL with query params containing CJK', () => {
-    ti(
-      '搜索https://example.com/search?q=你好&lang=zh结果',
-      '搜索 https://example.com/search?q=你好&lang=zh 结果'
-    );
+    ti('搜索https://example.com/search?q=你好&lang=zh结果', '搜索 https://example.com/search?q=你好&lang=zh 结果');
   });
 
   it('multiple URLs in one sentence', () => {
-    ti(
-      '参考https://a.com和https://b.com的文档',
-      '参考 https://a.com 和 https://b.com 的文档'
-    );
+    ti('参考https://a.com和https://b.com的文档', '参考 https://a.com 和 https://b.com 的文档');
   });
 
   it('URL immediately after comma', () => {
-    ti(
-      '请访问，https://example.com',
-      '请访问，https://example.com'
-    );
+    ti('请访问，https://example.com', '请访问，https://example.com');
   });
 
   it('URL with authentication: user@host', () => {
-    ti(
-      '连接ssh://user@host.com服务器',
-      '连接 ssh://user@host.com 服务器'
-    );
+    ti('连接ssh://user@host.com服务器', '连接 ssh://user@host.com 服务器');
   });
 
   it('URL with fragment and CJK', () => {
-    ti(
-      '参见https://doc.com/page#section-1说明',
-      '参见 https://doc.com/page#section-1 说明'
-    );
+    ti('参见https://doc.com/page#section-1说明', '参见 https://doc.com/page#section-1 说明');
   });
 
   it('bare domain with path', () => {
-    ti(
-      '访问github.com/user/repo获取源码',
-      '访问 github.com/user/repo 获取源码'
-    );
+    ti('访问github.com/user/repo获取源码', '访问 github.com/user/repo 获取源码');
   });
 
   it('IP address with port in CJK context', () => {
-    ti(
-      '服务器在192.168.1.1:8080运行',
-      '服务器在 192.168.1.1:8080 运行'
-    );
+    ti('服务器在192.168.1.1:8080运行', '服务器在 192.168.1.1:8080 运行');
   });
 
   it('email with subdomain', () => {
-    ti(
-      '发送到admin@mail.example.com确认',
-      '发送到 admin@mail.example.com 确认'
-    );
+    ti('发送到admin@mail.example.com确认', '发送到 admin@mail.example.com 确认');
   });
 });
 
@@ -553,16 +517,10 @@ describe('stress - processor interactions', () => {
   it('bracket + full-width conversion + spacing all at once', () => {
     // sizeof is English but embedded in CJK sentence — bracket conversion is context-dependent
     // (int) has CJK on outer boundary → full-width conversion can partially fire
-    t(
-      '使用sizeof(int)函数,返回(4)字节.',
-      '使用 sizeof（int) 函数，返回 (4）字节。'
-    );
+    t('使用sizeof(int)函数,返回(4)字节.', '使用 sizeof（int) 函数，返回 (4）字节。');
   });
 
   it('multiple abbreviations in one sentence', () => {
-    t(
-      'AT&T和R&D部门在U.S.A.的H2O研究',
-      'AT&T 和 R&D 部门在 U.S.A. 的 H2O 研究'
-    );
+    t('AT&T和R&D部门在U.S.A.的H2O研究', 'AT&T 和 R&D 部门在 U.S.A. 的 H2O 研究');
   });
 });

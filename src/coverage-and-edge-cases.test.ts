@@ -172,15 +172,12 @@ describe('edge cases - URL handling via processInput', () => {
   it('URL with query params and hash preserved', () => {
     ti(
       '参考https://docs.example.com/guide?lang=zh#section的说明',
-      '参考 https://docs.example.com/guide?lang=zh#section 的说明',
+      '参考 https://docs.example.com/guide?lang=zh#section 的说明'
     );
   });
 
   it('multiple URLs in text', () => {
-    ti(
-      '从https://a.com下载并访问https://b.com',
-      '从 https://a.com 下载并访问 https://b.com',
-    );
+    ti('从https://a.com下载并访问https://b.com', '从 https://a.com 下载并访问 https://b.com');
   });
 });
 

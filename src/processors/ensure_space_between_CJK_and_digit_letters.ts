@@ -17,10 +17,7 @@ const RE_LATIN_SYMBOL_BEFORE_CJK = new RegExp(`([a-zA-Z0-9][#+=]+)(?=[${rs.CJK}]
 const RE_LETTER_DASH_BEFORE_CJK = new RegExp(`([a-zA-Z0-9]-)(?=[${rs.CJK}])`, 'g');
 const RE_PAREN_BEFORE_CJK = new RegExp(`\\)(?=[${rs.CJK}])`, 'g');
 // Merged: CJK before [-+$][alnum], @, or # — all add "$1 " so safe to combine
-const RE_CJK_BEFORE_SIGN_OR_MENTION = new RegExp(
-  `([${rs.CJK}])(?=(?:[-+$][a-zA-Z0-9]|[@#]))`,
-  'g',
-);
+const RE_CJK_BEFORE_SIGN_OR_MENTION = new RegExp(`([${rs.CJK}])(?=(?:[-+$][a-zA-Z0-9]|[@#]))`, 'g');
 const RE_MENTION_TAG_BEFORE_CJK = new RegExp(`([@#][a-zA-Z0-9_]+)(?=[${rs.CJK}])`, 'g');
 const RE_CJK_BEFORE_BARE_DOLLAR = new RegExp(`([${rs.CJK}])(?=\\$(?![a-zA-Z0-9]))`, 'g');
 const RE_BARE_DOLLAR_BEFORE_CJK = new RegExp(`((?<![a-zA-Z0-9])\\$)(?=[${rs.CJK}])`, 'g');

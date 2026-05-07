@@ -50,28 +50,20 @@ describe('processInput - URL preservation', () => {
 describe('processInput - text with embedded URLs', () => {
   it('should preserve URL while formatting surrounding text', () => {
     // processInput splits by URL and adds spaces at CJK-URL boundaries
-    expect(processInput('访问https://example.com获取更多信息')).toBe(
-      '访问 https://example.com 获取更多信息'
-    );
+    expect(processInput('访问https://example.com获取更多信息')).toBe('访问 https://example.com 获取更多信息');
   });
 
   it('should format text portions while preserving URL', () => {
     // Spaces are added at CJK-URL boundaries
-    expect(processInput('请访问 https://www.apple.com 了解详情')).toBe(
-      '请访问 https://www.apple.com 了解详情'
-    );
+    expect(processInput('请访问 https://www.apple.com 了解详情')).toBe('请访问 https://www.apple.com 了解详情');
   });
 
   it('should handle text with IP address', () => {
-    expect(processInput('服务器地址是192.168.1.1请配置')).toBe(
-      '服务器地址是 192.168.1.1 请配置'
-    );
+    expect(processInput('服务器地址是192.168.1.1请配置')).toBe('服务器地址是 192.168.1.1 请配置');
   });
 
   it('should format CJK-Latin spacing in non-URL portions', () => {
-    expect(processInput('使用React开发 https://react.dev 了解详情')).toBe(
-      '使用 React 开发 https://react.dev 了解详情'
-    );
+    expect(processInput('使用React开发 https://react.dev 了解详情')).toBe('使用 React 开发 https://react.dev 了解详情');
   });
 
   it('should add space at CJK-URL boundary with port', () => {
@@ -128,9 +120,7 @@ describe('processInput - complex real-world scenarios', () => {
   });
 
   it('should handle pure URL input', () => {
-    expect(processInput('https://www.example.com/path?a=1&b=2#hash')).toBe(
-      'https://www.example.com/path?a=1&b=2#hash'
-    );
+    expect(processInput('https://www.example.com/path?a=1&b=2#hash')).toBe('https://www.example.com/path?a=1&b=2#hash');
   });
 
   it('should handle input with only spaces', () => {
@@ -142,8 +132,7 @@ describe('processInput - complex real-world scenarios', () => {
   });
 
   it('should handle a paragraph with multiple formatting issues and URLs', () => {
-    const input =
-      '我推荐你看看https://react.dev这个网站,React18引入了很多新feature';
+    const input = '我推荐你看看https://react.dev这个网站,React18引入了很多新feature';
     const result = processInput(input);
     expect(result).toContain('https://react.dev');
   });

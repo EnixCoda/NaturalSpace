@@ -337,10 +337,7 @@ describe('processText - edge cases', () => {
   });
 
   it('should handle multiple sentences', () => {
-    t(
-      '第一句话.第二句话.',
-      '第一句话。第二句话。'
-    );
+    t('第一句话.第二句话.', '第一句话。第二句话。');
   });
 
   it('should preserve ASCII ellipsis', () => {
@@ -356,52 +353,31 @@ describe('processText - edge cases', () => {
 
 describe('processText - real-world scenarios', () => {
   it('should format tech article text', () => {
-    t(
-      '使用React18和TypeScript开发Web应用',
-      '使用 React18 和 TypeScript 开发 Web 应用'
-    );
+    t('使用React18和TypeScript开发Web应用', '使用 React18 和 TypeScript 开发 Web 应用');
   });
 
   it('should format product description', () => {
-    t(
-      '新款MacBook Pro配备M2芯片,性能提升20%',
-      '新款 MacBook Pro 配备 M2 芯片，性能提升 20%'
-    );
+    t('新款MacBook Pro配备M2芯片,性能提升20%', '新款 MacBook Pro 配备 M2 芯片，性能提升 20%');
   });
 
   it('should format news text', () => {
-    t(
-      '据CNN报道,该公司今年营收超过100亿美元.',
-      '据 CNN 报道，该公司今年营收超过 100 亿美元。'
-    );
+    t('据CNN报道,该公司今年营收超过100亿美元.', '据 CNN 报道，该公司今年营收超过 100 亿美元。');
   });
 
   it('should format academic text', () => {
-    t(
-      '根据IEEE标准,WiFi6的理论速度可达9.6Gbps',
-      '根据 IEEE 标准，WiFi6 的理论速度可达 9.6 Gbps'
-    );
+    t('根据IEEE标准,WiFi6的理论速度可达9.6Gbps', '根据 IEEE 标准，WiFi6 的理论速度可达 9.6 Gbps');
   });
 
   it('should format game-related text', () => {
-    t(
-      '这款游戏需要16GB内存和RTX3080显卡.',
-      '这款游戏需要 16 GB 内存和 RTX3080 显卡。'
-    );
+    t('这款游戏需要16GB内存和RTX3080显卡.', '这款游戏需要 16 GB 内存和 RTX3080 显卡。');
   });
 
   it('should format app store description', () => {
-    t(
-      '下载量超过1000万次,评分4.8分(满分5分).',
-      '下载量超过 1000 万次，评分 4.8 分（满分 5 分）。'
-    );
+    t('下载量超过1000万次,评分4.8分(满分5分).', '下载量超过 1000 万次，评分 4.8 分（满分 5 分）。');
   });
 
   it('should handle programming context', () => {
-    t(
-      '使用npm install安装依赖包.',
-      '使用 npm install 安装依赖包。'
-    );
+    t('使用npm install安装依赖包.', '使用 npm install 安装依赖包。');
   });
 
   it('should handle social media text', () => {
@@ -438,16 +414,10 @@ describe('processText - idempotency', () => {
 
 describe('processText - multiline', () => {
   it('should handle multiline text preserving newlines', () => {
-    t(
-      `第一行text\n第二行text`,
-      `第一行 text\n第二行 text`
-    );
+    t(`第一行text\n第二行text`, `第一行 text\n第二行 text`);
   });
 
   it('should preserve empty lines', () => {
-    t(
-      `第一段\n\n第二段`,
-      `第一段\n\n第二段`
-    );
+    t(`第一段\n\n第二段`, `第一段\n\n第二段`);
   });
 });

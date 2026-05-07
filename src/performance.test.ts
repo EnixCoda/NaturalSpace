@@ -42,7 +42,8 @@ function bench(fn: () => void): { avg: number; p50: number; p95: number } {
 
 const INPUTS = {
   short: '你好Hello',
-  medium: '本文将介绍如何使用TypeScript和React18构建一个高性能的Web应用.我们将使用Next.js13作为框架,Tailwind CSS作为样式方案.',
+  medium:
+    '本文将介绍如何使用TypeScript和React18构建一个高性能的Web应用.我们将使用Next.js13作为框架,Tailwind CSS作为样式方案.',
   long: '在 這個 例子中 我們 將 混合使用CJK, English, and numbers 這 樣的 文 字让 你看到 一个比 较混 乱的段 落 2023年5月6日 是 今天 的日期 我们 的ChatGPT 是一 个基于 GPT4架构 的 大型 语言 模型 有时 候 混合 不 同 的语 言 和数字 会让 段落 显得 很 混乱',
 };
 
@@ -53,7 +54,11 @@ describe('performance benchmarks', () => {
     rows.push('-----------|---------|---------|--------');
     for (const [label, input] of Object.entries(INPUTS)) {
       const { avg, p50, p95 } = bench(() => processText(input, prefs));
-      rows.push(`${label.padEnd(10)} | ${avg.toFixed(1).padStart(7)} | ${p50.toFixed(1).padStart(7)} | ${p95.toFixed(1).padStart(7)}`);
+      rows.push(
+        `${label.padEnd(10)} | ${avg.toFixed(1).padStart(7)} | ${p50.toFixed(1).padStart(7)} | ${p95
+          .toFixed(1)
+          .padStart(7)}`
+      );
     }
     console.log('\n' + rows.join('\n'));
     expect(true).toBe(true);

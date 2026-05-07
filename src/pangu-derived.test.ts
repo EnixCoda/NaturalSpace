@@ -121,10 +121,7 @@ describe('pangu-derived - dash/hyphen symbol', () => {
   });
 
   it('compound words inside CJK sentence stay hyphenated', () => {
-    t(
-      '這間公司提供了一套state-of-the-art的real-time系統',
-      '這間公司提供了一套 state-of-the-art 的 real-time 系統',
-    );
+    t('這間公司提供了一套state-of-the-art的real-time系統', '這間公司提供了一套 state-of-the-art 的 real-time 系統');
   });
 
   it('AI model names with hyphens next to CJK', () => {
@@ -280,7 +277,7 @@ describe('pangu-derived - backtick', () => {
   it('real-world Claude Code example — backtick spaced, space before curly quote lost', () => {
     ti(
       '雖然知道可以在Claude Code直接執行shell指令，例如`! git commit -a -m "蛤"`，但是看了文件才知道原來在 http://command.md 裡面也可以用`!`啊#TIL',
-      '雖然知道可以在 Claude Code 直接執行 shell 指令，例如 `! git commit -a -m \u201c蛤\u201d`，但是看了文件才知道原來在 http://command.md 裡面也可以用 `!` 啊 #TIL',
+      '雖然知道可以在 Claude Code 直接執行 shell 指令，例如 `! git commit -a -m \u201c蛤\u201d`，但是看了文件才知道原來在 http://command.md 裡面也可以用 `!` 啊 #TIL'
     );
   });
 });
@@ -316,7 +313,7 @@ describe('pangu-derived - autocorrect fullwidth', () => {
   it('Japanese sentence-ending period conversion', () => {
     t(
       'でもっと多くのことができるようになります.そんな新機能の数々をさっそく体験してみましょう.',
-      'でもっと多くのことができるようになります。そんな新機能の数々をさっそく体験してみましょう。',
+      'でもっと多くのことができるようになります。そんな新機能の数々をさっそく体験してみましょう。'
     );
   });
 
@@ -333,7 +330,7 @@ describe('pangu-derived - autocorrect fullwidth', () => {
     // autocorrect would keep (如 ...) as half-width. Design difference.
     t(
       '我们需要一位熟悉 JavaScript、HTML5,至少理解一种框架 (如 Backbone.js、AngularJS、React 等) 的前端开发者.',
-      '我们需要一位熟悉 JavaScript、HTML5，至少理解一种框架（如 Backbone.js、AngularJS、React 等）的前端开发者。',
+      '我们需要一位熟悉 JavaScript、HTML5，至少理解一种框架（如 Backbone.js、AngularJS、React 等）的前端开发者。'
     );
   });
 
@@ -343,10 +340,7 @@ describe('pangu-derived - autocorrect fullwidth', () => {
 
   it('stock ticker in parens — BUG: space added after period in identifier', () => {
     // BUG: BABA.N → BABA. N (period followed by capital letter gets a space)
-    t(
-      '蚂蚁集团是阿里巴巴 (BABA.N) 旗下金融科技子公司',
-      '蚂蚁集团是阿里巴巴 (BABA.N) 旗下金融科技子公司',
-    );
+    t('蚂蚁集团是阿里巴巴 (BABA.N) 旗下金融科技子公司', '蚂蚁集团是阿里巴巴 (BABA.N) 旗下金融科技子公司');
   });
 
   it('semicolon between CJK — NaturalSpace converts to full-width (autocorrect skips)', () => {
@@ -383,22 +377,19 @@ describe('pangu-derived - complex real-world sentences', () => {
     // pangu.js expects 「」 corner brackets; NaturalSpace converts to curly ""
     t(
       'Sephiroth見到他這等神情，也是悚然一驚：「此人來歷不小啊！不知我這太極拳是否對付得了？」',
-      'Sephiroth 見到他這等神情，也是悚然一驚：\u201c此人來歷不小啊！不知我這太極拳是否對付得了？\u201d',
+      'Sephiroth 見到他這等神情，也是悚然一驚：\u201c此人來歷不小啊！不知我這太極拳是否對付得了？\u201d'
     );
   });
 
   it('pangu.js text-file fixture line 2 — NaturalSpace uses "" not 「」', () => {
     t(
       '張無忌道：「Tifa，你待孩兒恩重如山，孩兒便粉身碎骨，也不足以報太師父和Red XIII的大恩。我武當派功夫雖不敢說天下無敵，但也不致輸於西域少林的手下。太師父儘管放心。」',
-      '張無忌道：\u201cTifa，你待孩兒恩重如山，孩兒便粉身碎骨，也不足以報太師父和 Red XIII 的大恩。我武當派功夫雖不敢說天下無敵，但也不致輸於西域少林的手下。太師父儘管放心。\u201d',
+      '張無忌道：\u201cTifa，你待孩兒恩重如山，孩兒便粉身碎骨，也不足以報太師父和 Red XIII 的大恩。我武當派功夫雖不敢說天下無敵，但也不致輸於西域少林的手下。太師父儘管放心。\u201d'
     );
   });
 
   it('pangu.js text-file percentage lines', () => {
-    t(
-      '新八的構造成分有95%是眼鏡、3%是水、2%是垃圾',
-      '新八的構造成分有 95% 是眼鏡、3% 是水、2% 是垃圾',
-    );
+    t('新八的構造成分有95%是眼鏡、3%是水、2%是垃圾', '新八的構造成分有 95% 是眼鏡、3% 是水、2% 是垃圾');
   });
 
   it('Sci-Fi hyphen in English text — no change', () => {
@@ -406,10 +397,7 @@ describe('pangu-derived - complex real-world sentences', () => {
   });
 
   it('CJK surrounded hyphenated English tech terms', () => {
-    t(
-      '系統具備end-to-end加密功能以及cutting-edge的效能',
-      '系統具備 end-to-end 加密功能以及 cutting-edge 的效能',
-    );
+    t('系統具備end-to-end加密功能以及cutting-edge的效能', '系統具備 end-to-end 加密功能以及 cutting-edge 的效能');
   });
 
   it('letter grade with trailing dash — BUG: no space after trailing dash', () => {

@@ -53,10 +53,7 @@ export const processors: ProcessorRecord[] = (
     ['no space between CJK'],
     ['use preferred full-width quotes', ['use full-width quotes if they contain CJK characters']],
     ['use full-width punctuation around CJK characters', ['no space before punctuations']],
-    [
-      'use half-width punctuation when not adjacent to CJK',
-      ['use full-width punctuation around CJK characters'],
-    ],
+    ['use half-width punctuation when not adjacent to CJK', ['use full-width punctuation around CJK characters']],
     [
       'ensure space before left brackets',
       ['use full-width punctuation around CJK characters', 'use full-width brackets if they contain CJK characters'],

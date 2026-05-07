@@ -48,4 +48,3 @@ export const use_full_width_punctuation_around_CJK_characters: Processor = (inpu
 
   return result;
 };
-

@@ -34,18 +34,14 @@ describe('createOrderedProcessor', () => {
   });
 
   it('should handle empty input', () => {
-    const records: ProcessorRecord[] = [
-      ['noop', (input) => input],
-    ];
+    const records: ProcessorRecord[] = [['noop', (input) => input]];
     const order = ['noop'];
     const processor = createOrderedProcessor(records, order);
     expect(processor('', {})).toBe('');
   });
 
   it('should pass preferences to each processor', () => {
-    const records: ProcessorRecord[] = [
-      ['check-prefs', (_input, prefs) => (prefs as any).value || 'none'],
-    ];
+    const records: ProcessorRecord[] = [['check-prefs', (_input, prefs) => (prefs as any).value || 'none']];
     const order = ['check-prefs'];
     const processor = createOrderedProcessor(records, order);
     expect(processor('anything', { value: 'found' } as any)).toBe('found');
@@ -64,9 +60,7 @@ describe('createOrderedProcessor', () => {
   });
 
   it('should handle single processor', () => {
-    const records: ProcessorRecord[] = [
-      ['only', (input) => input.trim()],
-    ];
+    const records: ProcessorRecord[] = [['only', (input) => input.trim()]];
     const order = ['only'];
     const processor = createOrderedProcessor(records, order);
     expect(processor('  hello  ', {})).toBe('hello');

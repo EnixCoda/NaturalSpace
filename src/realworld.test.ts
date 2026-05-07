@@ -26,8 +26,7 @@ const ti = (input: string, expected: string, preferences?: Preferences) => {
 
 describe('real-world - copywriting guidelines', () => {
   it('space before/after English words (basic rule)', () => {
-    t('在LeanCloud上，數據儲存是圍繞AVObject進行的',
-      '在 LeanCloud 上，數據儲存是圍繞 AVObject 進行的');
+    t('在LeanCloud上，數據儲存是圍繞AVObject進行的', '在 LeanCloud 上，數據儲存是圍繞 AVObject 進行的');
   });
 
   it('space before/after numbers', () => {
@@ -44,26 +43,22 @@ describe('real-world - copywriting guidelines', () => {
   });
 
   it('no space between number and percent', () => {
-    t('新MacBook Pro有15%的CPU性能提升',
-      '新 MacBook Pro 有 15% 的 CPU 性能提升');
+    t('新MacBook Pro有15%的CPU性能提升', '新 MacBook Pro 有 15% 的 CPU 性能提升');
   });
 
   it('no space before/after full-width punctuation', () => {
-    t('剛剛買了一部iPhone，好開心！',
-      '剛剛買了一部 iPhone，好開心！');
+    t('剛剛買了一部iPhone，好開心！', '剛剛買了一部 iPhone，好開心！');
   });
 
   it('half-width parentheses with English content get spaces', () => {
     // use_full_width_brackets_if_CJK only converts when content is CJK
     // English content stays half-width with spaces added
-    t('核磁共振成像(NMRI)是什麼原理',
-      '核磁共振成像 (NMRI) 是什麼原理');
+    t('核磁共振成像(NMRI)是什麼原理', '核磁共振成像 (NMRI) 是什麼原理');
   });
 
   it('half-width punctuation inside full-width quotes', () => {
     // Straight quotes stay straight when content has no CJK (only step 5 converts CJK-containing quotes)
-    t('賈伯斯那句話是怎麼說的？"Stay hungry, stay foolish."',
-      '賈伯斯那句話是怎麼說的？"Stay hungry, stay foolish."');
+    t('賈伯斯那句話是怎麼說的？"Stay hungry, stay foolish."', '賈伯斯那句話是怎麼說的？"Stay hungry, stay foolish."');
   });
 
   it('fullwidth numbers should be converted to halfwidth', () => {
@@ -75,13 +70,11 @@ describe('real-world - copywriting guidelines', () => {
 
 describe('real-world - pangu.js fixtures', () => {
   it('novel text with English names', () => {
-    t('Sephiroth見到他這等神情，也是悚然一驚',
-      'Sephiroth 見到他這等神情，也是悚然一驚');
+    t('Sephiroth見到他這等神情，也是悚然一驚', 'Sephiroth 見到他這等神情，也是悚然一驚');
   });
 
   it('mixed English names in Traditional Chinese', () => {
-    t('不足以報太師父和Red XIII的大恩',
-      '不足以報太師父和 Red XIII 的大恩');
+    t('不足以報太師父和Red XIII的大恩', '不足以報太師父和 Red XIII 的大恩');
   });
 
   it('percentage CJK boundary', () => {
@@ -89,13 +82,11 @@ describe('real-world - pangu.js fixtures', () => {
   });
 
   it('decimal number in CJK text', () => {
-    t('請問Jackey的鼻子有幾個?3.14個',
-      '請問 Jackey 的鼻子有幾個？3.14 個');
+    t('請問Jackey的鼻子有幾個?3.14個', '請問 Jackey 的鼻子有幾個？3.14 個');
   });
 
   it('multiple percentages in one sentence', () => {
-    t('有95%是眼鏡、3%是水、2%是垃圾',
-      '有 95% 是眼鏡、3% 是水、2% 是垃圾');
+    t('有95%是眼鏡、3%是水、2%是垃圾', '有 95% 是眼鏡、3% 是水、2% 是垃圾');
   });
 });
 
@@ -149,8 +140,7 @@ describe('real-world - scientific notation', () => {
   });
 
   it('IP address in text', () => {
-    t('服务器地址是192.168.1.1端口8080',
-      '服务器地址是 192.168.1.1 端口 8080');
+    t('服务器地址是192.168.1.1端口8080', '服务器地址是 192.168.1.1 端口 8080');
   });
 
   it('scientific notation with exponent', () => {
@@ -194,8 +184,7 @@ describe('real-world - formatted numbers', () => {
   });
 
   it('build number', () => {
-    t('当前版本号为Build20230615稳定版',
-      '当前版本号为 Build20230615 稳定版');
+    t('当前版本号为Build20230615稳定版', '当前版本号为 Build20230615 稳定版');
   });
 
   it('time range with dash', () => {
@@ -203,8 +192,7 @@ describe('real-world - formatted numbers', () => {
   });
 
   it('date range', () => {
-    t('活动时间2024-01-01至2024-12-31有效',
-      '活动时间 2024-01-01 至 2024-12-31 有效');
+    t('活动时间2024-01-01至2024-12-31有效', '活动时间 2024-01-01 至 2024-12-31 有效');
   });
 
   it('temperature range', () => {
@@ -234,10 +222,7 @@ describe('real-world - product copy', () => {
   });
 
   it('app store description', () => {
-    t(
-      '超过100万用户的选择,评分4.9星,下载量突破500万次.',
-      '超过 100 万用户的选择，评分 4.9 星，下载量突破 500 万次。'
-    );
+    t('超过100万用户的选择,评分4.9星,下载量突破500万次.', '超过 100 万用户的选择，评分 4.9 星，下载量突破 500 万次。');
   });
 
   it('Microsoft product text', () => {
@@ -261,13 +246,11 @@ describe('real-world - product copy', () => {
 
 describe('real-world - social media', () => {
   it('WeChat-style message with emoji', () => {
-    t('今天去吃了好吃的ramen🍜超级推荐！',
-      '今天去吃了好吃的 ramen🍜超级推荐！');
+    t('今天去吃了好吃的ramen🍜超级推荐！', '今天去吃了好吃的 ramen🍜超级推荐！');
   });
 
   it('hashtag-style tags in Chinese', () => {
-    t('#今日份好心情#分享给大家',
-      '#今日份好心情 #分享给大家');
+    t('#今日份好心情#分享给大家', '#今日份好心情 #分享给大家');
   });
 
   it('@mention in CJK context', () => {
@@ -289,23 +272,19 @@ describe('real-world - formal documents', () => {
   it('contract party designation — bracket regex matches across pairs', () => {
     // Known limitation: the bracket regex matches across bracket pairs when CJK exists between them
     // (Party A)与乙方(Party B) → first ( matches across to last ) because CJK exists between
-    t('甲方(Party A)与乙方(Party B)签订本合同',
-      '甲方（Party A) 与乙方 (Party B）签订本合同');
+    t('甲方(Party A)与乙方(Party B)签订本合同', '甲方（Party A) 与乙方 (Party B）签订本合同');
   });
 
   it('legal article reference', () => {
-    t('根据《中华人民共和国民法典》第1条规定',
-      '根据《中华人民共和国民法典》第 1 条规定');
+    t('根据《中华人民共和国民法典》第1条规定', '根据《中华人民共和国民法典》第 1 条规定');
   });
 
   it('formal percentage', () => {
-    t('年利率不超过24%的部分，人民法院予以保护',
-      '年利率不超过 24% 的部分，人民法院予以保护');
+    t('年利率不超过24%的部分，人民法院予以保护', '年利率不超过 24% 的部分，人民法院予以保护');
   });
 
   it('RMB currency amount', () => {
-    t('合同金额为人民币¥100,000元整',
-      '合同金额为人民币¥100,000 元整');
+    t('合同金额为人民币¥100,000元整', '合同金额为人民币¥100,000 元整');
   });
 });
 
@@ -314,13 +293,11 @@ describe('real-world - formal documents', () => {
 describe('real-world - technical docs', () => {
   it('API endpoint description — BUG: space removed before /path', () => {
     // BUG: GET /api/users → GET/api/users — space before slash gets removed
-    t('调用GET /api/users接口获取用户列表',
-      '调用 GET /api/users 接口获取用户列表');
+    t('调用GET /api/users接口获取用户列表', '调用 GET /api/users 接口获取用户列表');
   });
 
   it('HTTP status code', () => {
-    t('返回HTTP200表示请求成功,404表示未找到',
-      '返回 HTTP200 表示请求成功，404 表示未找到');
+    t('返回HTTP200表示请求成功,404表示未找到', '返回 HTTP200 表示请求成功，404 表示未找到');
   });
 
   it('TCP/IP protocol reference', () => {
@@ -328,34 +305,28 @@ describe('real-world - technical docs', () => {
   });
 
   it('environment variable usage', () => {
-    t('配置NODE_ENV=production环境变量',
-      '配置 NODE_ENV=production 环境变量');
+    t('配置NODE_ENV=production环境变量', '配置 NODE_ENV=production 环境变量');
   });
 
   it('package.json reference', () => {
-    t('在package.json中添加scripts字段',
-      '在 package.json 中添加 scripts 字段');
+    t('在package.json中添加scripts字段', '在 package.json 中添加 scripts 字段');
   });
 
   it('CLI command in prose', () => {
-    t('执行npm run build命令编译项目',
-      '执行 npm run build 命令编译项目');
+    t('执行npm run build命令编译项目', '执行 npm run build 命令编译项目');
   });
 
   it('error message with code', () => {
-    t('报错TypeError: Cannot read properties of undefined',
-      '报错 TypeError: Cannot read properties of undefined');
+    t('报错TypeError: Cannot read properties of undefined', '报错 TypeError: Cannot read properties of undefined');
   });
 
   it('regex pattern in text', () => {
     // Regex-like content — slashes should not trigger URL detection
-    t('使用正则/[a-z]+/匹配小写字母',
-      '使用正则/[a-z]+/匹配小写字母');
+    t('使用正则/[a-z]+/匹配小写字母', '使用正则/[a-z]+/匹配小写字母');
   });
 
   it('git commit hash', () => {
-    t('回退到commit abc123f版本',
-      '回退到 commit abc123f 版本');
+    t('回退到commit abc123f版本', '回退到 commit abc123f 版本');
   });
 
   it('Docker image reference — BUG: colon gets space in identifier', () => {
@@ -368,8 +339,7 @@ describe('real-world - technical docs', () => {
 
 describe('real-world - e-commerce', () => {
   it('product listing with price', () => {
-    t('原价¥299,现价¥199,立省100元!',
-      '原价¥299，现价¥199，立省 100 元！');
+    t('原价¥299,现价¥199,立省100元!', '原价¥299，现价¥199，立省 100 元！');
   });
 
   it('shipping info', () => {
@@ -379,18 +349,15 @@ describe('real-world - e-commerce', () => {
   it('product dimensions — BUG: units get split and × spacing inconsistent', () => {
     // BUG: 100cm× → 100 cm× (space between number and unit is ok,
     //       but cm× gets space only after ×, not before — inconsistent)
-    t('尺寸:长100cm×宽50cm×高30cm',
-      '尺寸：长 100 cm × 宽 50 cm × 高 30 cm');
+    t('尺寸:长100cm×宽50cm×高30cm', '尺寸：长 100 cm × 宽 50 cm × 高 30 cm');
   });
 
   it('star rating', () => {
-    t('用户评价4.8分,共12345条评论',
-      '用户评价 4.8 分，共 12345 条评论');
+    t('用户评价4.8分,共12345条评论', '用户评价 4.8 分，共 12345 条评论');
   });
 
   it('discount percentage', () => {
-    t('限时8折优惠,再享满200减30',
-      '限时 8 折优惠，再享满 200 减 30');
+    t('限时8折优惠,再享满200减30', '限时 8 折优惠，再享满 200 减 30');
   });
 });
 
@@ -398,31 +365,19 @@ describe('real-world - e-commerce', () => {
 
 describe('real-world - URLs in context', () => {
   it('documentation link in instruction', () => {
-    ti(
-      '详情请参考https://docs.example.com/guide的说明文档',
-      '详情请参考 https://docs.example.com/guide 的说明文档'
-    );
+    ti('详情请参考https://docs.example.com/guide的说明文档', '详情请参考 https://docs.example.com/guide 的说明文档');
   });
 
   it('GitHub repository link', () => {
-    ti(
-      '源码托管在https://github.com/user/repo欢迎star',
-      '源码托管在 https://github.com/user/repo 欢迎 star'
-    );
+    ti('源码托管在https://github.com/user/repo欢迎star', '源码托管在 https://github.com/user/repo 欢迎 star');
   });
 
   it('email in tech support context', () => {
-    ti(
-      '如有问题请联系support@company.com或拨打400-123-4567',
-      '如有问题请联系 support@company.com 或拨打 400-123-4567'
-    );
+    ti('如有问题请联系support@company.com或拨打400-123-4567', '如有问题请联系 support@company.com 或拨打 400-123-4567');
   });
 
   it('URL at end of sentence with period', () => {
-    ti(
-      '官网地址是https://example.com.',
-      '官网地址是 https://example.com.'
-    );
+    ti('官网地址是https://example.com.', '官网地址是 https://example.com.');
   });
 });
 
@@ -430,31 +385,26 @@ describe('real-world - URLs in context', () => {
 
 describe('real-world - Japanese text', () => {
   it('Japanese with English brand names', () => {
-    t('AppleのiPhone15 Proは最高のスマートフォンです',
-      'Apple の iPhone15 Pro は最高のスマートフォンです');
+    t('AppleのiPhone15 Proは最高のスマートフォンです', 'Apple の iPhone15 Pro は最高のスマートフォンです');
   });
 
   it('katakana loanword with English original', () => {
     // Half-width parens with English content stay half-width with spaces
-    t('プログラミング(programming)を学ぶ',
-      'プログラミング (programming) を学ぶ');
+    t('プログラミング(programming)を学ぶ', 'プログラミング (programming) を学ぶ');
   });
 
   it('mixed hiragana katakana and Latin', () => {
-    t('データベースにMySQL5.7を使用する',
-      'データベースに MySQL5.7 を使用する');
+    t('データベースにMySQL5.7を使用する', 'データベースに MySQL5.7 を使用する');
   });
 });
 
 describe('real-world - Korean text', () => {
   it('Korean with English tech terms', () => {
-    t('Python3.12를사용하여개발합니다',
-      'Python3.12 를사용하여개발합니다');
+    t('Python3.12를사용하여개발합니다', 'Python3.12 를사용하여개발합니다');
   });
 
   it('Korean product specs', () => {
-    t('16GB메모리와512GB SSD를탑재',
-      '16 GB 메모리와 512 GB SSD 를탑재');
+    t('16GB메모리와512GB SSD를탑재', '16 GB 메모리와 512 GB SSD 를탑재');
   });
 });
 
@@ -467,18 +417,15 @@ describe('real-world - community-reported edge cases', () => {
 
   it('parenthetical translation', () => {
     // Half-width parens with English content stay half-width with spaces
-    t('机器学习(Machine Learning)领域',
-      '机器学习 (Machine Learning) 领域');
+    t('机器学习(Machine Learning)领域', '机器学习 (Machine Learning) 领域');
   });
 
   it('em-dash in Chinese writing', () => {
-    t('他的回答——很简洁——让人印象深刻',
-      '他的回答——很简洁——让人印象深刻');
+    t('他的回答——很简洁——让人印象深刻', '他的回答——很简洁——让人印象深刻');
   });
 
   it('book title marks 《》 should be preserved', () => {
-    t('推荐阅读《设计模式》和《重构》',
-      '推荐阅读《设计模式》和《重构》');
+    t('推荐阅读《设计模式》和《重构》', '推荐阅读《设计模式》和《重构》');
   });
 
   it('nested quotes', () => {
@@ -491,10 +438,7 @@ describe('real-world - community-reported edge cases', () => {
   });
 
   it('multiple English words in CJK sentence', () => {
-    t(
-      '这个feature在next sprint中会implement',
-      '这个 feature 在 next sprint 中会 implement'
-    );
+    t('这个feature在next sprint中会implement', '这个 feature 在 next sprint 中会 implement');
   });
 
   it('year-month format', () => {
@@ -502,8 +446,7 @@ describe('real-world - community-reported edge cases', () => {
   });
 
   it('mixed Traditional and Simplified Chinese', () => {
-    t('繁體中文和简体中文都支持UTF-8编码',
-      '繁體中文和简体中文都支持 UTF-8 编码');
+    t('繁體中文和简体中文都支持UTF-8编码', '繁體中文和简体中文都支持 UTF-8 编码');
   });
 
   it('numbered list items — BUG: period converted to full-width', () => {
@@ -513,8 +456,7 @@ describe('real-world - community-reported edge cases', () => {
 
   it('comma-separated English in CJK', () => {
     // Commas between English words stay half-width (character-adjacency based)
-    t('支持HTML,CSS,JavaScript等前端技术',
-      '支持 HTML, CSS, JavaScript 等前端技术');
+    t('支持HTML,CSS,JavaScript等前端技术', '支持 HTML, CSS, JavaScript 等前端技术');
   });
 });
 
@@ -567,8 +509,7 @@ describe('real-world - tricky ambiguity', () => {
   });
 
   it('dot in domain-like identifiers', () => {
-    t('配置application.properties文件',
-      '配置 application.properties 文件');
+    t('配置application.properties文件', '配置 application.properties 文件');
   });
 
   it('question mark at end of CJK question', () => {

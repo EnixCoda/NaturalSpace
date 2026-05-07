@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "natural-space",
   "title": "Natural Space",
-  "description": "Add space to natural language text.",
+  "description": "Automatically add proper spacing between CJK and Latin characters and fix punctuation width.",
   "icon": "command-icon.png",
   "author": "EnixCoda",
   "categories": [
@@ -36,7 +36,7 @@
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.50.2"
+    "@raycast/api": "^1.104.15"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",

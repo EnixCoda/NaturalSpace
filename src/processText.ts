@@ -13,6 +13,6 @@ const processor = createOrderedProcessor(processors, processorOrder);
 // - The text tend to use CJK as the primary language, that is, when full-width punctuation is applicable, it is used
 // - Punctuations do not appear at the beginning of a line, except for `(` and `"` which are used to start a quote
 // - No multiple punctuations appear in a row, except for `...` and `---`
-export function processText(input: string, preferences: Preferences = {}): string {
+export function processText(input: string, preferences: Preferences = { useStraightQuotesForCJK: false }): string {
   return processor(input, preferences);
 }
