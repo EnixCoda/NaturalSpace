@@ -8,8 +8,6 @@ body:
       value: |
         Thanks for taking the time to fill out this bug report!
 
-        This tool is still in beta, so there are bound to be some bugs. I'll appreciate it if you can report any bugs you find!
-
   - type: textarea
     id: text-to-format
     attributes:

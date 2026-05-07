@@ -1,4 +1,4 @@
-import { open } from '@raycast/api';
+import { open, showHUD } from '@raycast/api';
 
 export default async function main() {
   // Open a new issue on my own repo to make use of the template
@@ -6,5 +6,6 @@ export default async function main() {
     title: 'Unexpected format result from ...',
     template: 'unexpected_format_result.yml',
   });
-  open(`https://github.com/EnixCoda/NaturalSpace/issues/new?${search}`);
+  await open(`https://github.com/EnixCoda/NaturalSpace/issues/new?${search}`);
+  await showHUD('Opening GitHub to file issue…');
 }
