@@ -14,6 +14,7 @@ import { use_full_width_brackets_if_they_contain_CJK_characters } from './use_fu
 import { use_full_width_punctuation_around_CJK_characters } from './use_full_width_punctuation_around_CJK_characters';
 import { use_full_width_quotes_if_they_contain_CJK_characters } from './use_full_width_quotes_if_they_contain_CJK_characters';
 import { use_half_width_punctuation_between_CJK_brackets_if_no_CJK_found } from './use_half_width_punctuation_between_CJK_brackets_if_no_CJK_found';
+import { use_half_width_punctuation_when_not_adjacent_to_CJK } from './use_half_width_punctuation_when_not_adjacent_to_CJK';
 import { use_preferred_full_width_quotes } from './use_preferred_full_width_quotes';
 
 const _processors: Record<string, Processor> = {
@@ -36,6 +37,7 @@ const _processors: Record<string, Processor> = {
   'ensure space after some half-width punctuations': ensure_space_after_some_half_width_punctuations,
   'ensure space around some half-width punctuations': ensure_space_around_some_half_width_punctuations,
   'no space between CJK': no_space_between_CJK,
+  'use half-width punctuation when not adjacent to CJK': use_half_width_punctuation_when_not_adjacent_to_CJK,
 };
 
 export const processors: ProcessorRecord[] = (
@@ -51,6 +53,10 @@ export const processors: ProcessorRecord[] = (
     ['no space between CJK'],
     ['use preferred full-width quotes', ['use full-width quotes if they contain CJK characters']],
     ['use full-width punctuation around CJK characters', ['no space before punctuations']],
+    [
+      'use half-width punctuation when not adjacent to CJK',
+      ['use full-width punctuation around CJK characters'],
+    ],
     [
       'ensure space before left brackets',
       ['use full-width punctuation around CJK characters', 'use full-width brackets if they contain CJK characters'],

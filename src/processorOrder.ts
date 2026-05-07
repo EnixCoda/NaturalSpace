@@ -11,6 +11,7 @@ export const processorOrder = [
   'no space between CJK',
   'use preferred full-width quotes',
   'use full-width punctuation around CJK characters',
+  'use half-width punctuation when not adjacent to CJK',
   'ensure space before left brackets',
   'use half-width punctuation between CJK brackets if no CJK found',
   'no space around full-width punctuation',

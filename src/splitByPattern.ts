@@ -26,12 +26,23 @@ export function splitByPattern(text: string): [content: string, pattern: Pattern
 
   const matches = text.matchAll(allPatterns);
 
+  const cjkTrail = /[\u4e00-\u9fa5\u3040-\u30FF\uAC00-\uD7AF]+$/;
+
   let lastIndex = 0;
   for (const match of matches) {
-    const [matchedText] = match;
+    let [matchedText] = match;
     const { index = lastIndex } = match;
     const prefix = text.slice(lastIndex, index);
     if (prefix) chunks.push([prefix, 'nomatch']);
+    // Trim trailing CJK characters from URL matches (they're likely regular text, not part of URL)
+    // Keep CJK if preceded by = (part of a query parameter value like ?q=你好)
+    const trailingCJK = matchedText.match(cjkTrail);
+    if (trailingCJK) {
+      const beforeCJK = matchedText.slice(0, matchedText.length - trailingCJK[0].length);
+      if (!beforeCJK.endsWith('=')) {
+        matchedText = beforeCJK;
+      }
+    }
     chunks.push([matchedText, 'ignore']);
     lastIndex = index + matchedText.length;
   }

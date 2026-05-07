@@ -8,3 +8,6 @@ raycast-env.d.ts
 
 # misc
 .DS_Store
+
+# test coverage output
+/coverage

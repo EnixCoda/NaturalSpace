@@ -2,5 +2,6 @@ import { Processor } from '../createOrderedProcessor';
 import { regex as r } from '../regex';
 
 // ex: A(Apple) => A (Apple)
+// But not: [text](url) — don't add space after ]
 export const ensure_space_before_left_brackets: Processor = (input) =>
-  input.replace(r.of('[(]').after('[^ ]').$(), ' (');
+  input.replace(r.of('[(]').after('[^ \\]]').$(), ' (');

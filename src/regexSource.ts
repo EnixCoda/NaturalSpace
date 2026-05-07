@@ -65,11 +65,11 @@ export const regexSource = {
   fullWidthChars: fullWidthCharacterRules.map(([, full]) => full).join(''),
   unit: [
     '%',
-    '\u00B0',
-    '\u00A2-\u00A5',
-    '\u2100-\u214F',
-    '\u3371-\u33DF',
-    '\u2150-\u215E', // ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅛ ⅜ ⅝ ⅞ ⅟
+    '\\u00B0',
+    '\\u00A2-\\u00A5',
+    '\\u2100-\\u214F',
+    '\\u3371-\\u33DF',
+    '\\u2150-\\u215E', // ⅐ ⅑ ⅒ ⅓ ⅔ ⅕ ⅖ ⅗ ⅘ ⅙ ⅚ ⅛ ⅜ ⅝ ⅞ ⅟
   ].join(''),
   lineBreakAndNonSpace: '\\S\\r\\n',
 };
