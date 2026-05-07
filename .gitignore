@@ -11,3 +11,6 @@ raycast-env.d.ts
 
 # test coverage output
 /coverage
+
+# build output
+/dist
